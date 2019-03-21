@@ -11,11 +11,13 @@ from konlpy.tag import Mecab
 
 from rasa_nlu.components import Component
 from rasa_nlu.tokenizers import Tokenizer, Token
+from khaiii import KhaiiiApi
+api = KhaiiiApi()
 
 
-class KoreanTokenizer(Tokenizer, Component):
+class KoreanTokenizerKhaiii(Tokenizer, Component):
 
-    name = "component.KoreanTokenizer"
+    name = "component.KoreanTokenizerKhaiii"
 
     provides = ["tokens"]
 
@@ -31,9 +33,11 @@ class KoreanTokenizer(Tokenizer, Component):
 
     def __init__(self, component_config=None):
 
-        super(KoreanTokenizer, self).__init__(component_config)
+        super(KoreanTokenizerKhaiii, self).__init__(component_config)
 
-        self.mecab=Mecab()
+        #self.mecab=Mecab()
+
+        # self.api = KhaiiiApi()
 
         '''
         okt implementation
@@ -58,14 +62,9 @@ class KoreanTokenizer(Tokenizer, Component):
     def tokenize(self, text):
         # type: (Text) -> List[Token]
 
-        token_list=self.mecab.morphs(text)
-
-        running_offset = 0
         result = []
-        for token in token_list:
-            token_offset = text.index(token, running_offset)
-            token_len = len(token)
-            running_offset = token_offset + token_len
-            result.append(Token(token, token_offset))
+        for word in api.analyze(text):
+            for m in word.morphs:
+                result.append(Token(m.lex, m.begin))
 
         return result

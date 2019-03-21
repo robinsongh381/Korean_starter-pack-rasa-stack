@@ -1,76 +1,81 @@
 intents:
+- add_workspace
+- remove_workspace
+- day_search
+- date_search
+- url_search
 - greet
-- goodbye
 - thanks
-- deny
-- joke
-- name
-- intro
-- blood_type
-- detect_URL
-- Tic_Tok
+- sound_change
+- sound_up
+- sound_down
+- display_off
+- sleep_mode
+- action_display_off
 
 entities:
-- PS
-- type
+- workspace
 - url
 - time
-- TI
-- email
+- number
+- day
+- cycle
+- duration
 
 slots:
-  PS:
-    type: unfeaturized
-  TI:
-    type: unfeaturized
-  type:
+  workspace:
     type: unfeaturized
   url:
     type: unfeaturized
   time:
     type: unfeaturized
-  email:
+  number:
+    type: unfeaturized
+  day:
+    type: unfeaturized
+  cycle:
+    type: unfeaturized
+  duration:
     type: unfeaturized
 
 actions:
-- utter_name
-- utter_thanks
+- utter_add_workspace
+- utter_remove_workspace
+- utter_day_search
+- utter_date_search
 - utter_greet
-- utter_goodbye
-- utter_joke
+- utter_thanks
+- utter_url_detect
 - utter_fallback
-- utter_blood_type
-- utter_blood_type_confirm
-- utter_detect_complete
+- action_day_search
+- action_date_search
+- action_sound_change
+- action_sound_up
+- action_sound_down
+- action_display_off
 
 templates:
-  utter_name:
-  - text: "안녕하세요. 이름이 뭐에요?"
+
+  utter_add_workspace:
+  - text: " 워크스페이스 생성 "
+
+  utter_remove_workspace:
+  - text: " 워크스페이스 삭제 "
+
+  utter_day_search:
+  - text: "{day}  은 X요일 입니다"
+
+  utter_date_search:
+  - text: " {date} 는 X월 Y일 입니다"
 
   utter_greet:
-  - text: "{PS}님 반갑습니다. 무슨일이세요?"
-
-  utter_goodbye:
-  - text: "다음에 또 얘기해요~!"
+  - text: "반갑습니다~ !"
 
   utter_thanks:
   - text: "감사합니다^^"
 
-  utter_joke:
-  - text: "설탕이 깜짝 놀라면!!! 이럴 슈가~~~"
-  - text: "아마존에 사람이 누굴까요? 아마... John?"
-  - text: "총이 움직이면!!!??? 이동건~~"
-  - text: "고추가 웃으면? 풋고추...ㅎㅎㅎㅎ"
-  - text: "세상에서 가장 착한 사자가 뭔지알아요? 자원봉사자!"
+  utter_url_detect:
+  - text: " url 확인: {url} "
 
   utter_fallback:
-  - text: "무슨 뜻인지 모르겠어요...ㅠㅠ"
-
-  utter_blood_type:
-  - text: "혈액형이 뭐에요?"
-
-  utter_blood_type_confirm:
-  - text: "당신 혈액형 {type} 맞나요?"
-
-  utter_detect_complete:
-  - text: "email & url 확인"
+  - text: "잘 모르겠습니다"

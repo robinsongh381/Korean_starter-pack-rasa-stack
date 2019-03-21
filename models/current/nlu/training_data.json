@@ -1,416 +1,569 @@
 {
   "rasa_nlu_data": {
-    "entity_synonyms": [],
-    "lookup_tables": [
-      {
-        "elements": "data/name.txt",
-        "name": "PS"
-      }
-    ],
     "common_examples": [
       {
-        "intent": "intro",
-        "text": "제 이름은 동현 입니다",
-        "entities": [
-          {
-            "start": 6,
-            "end": 8,
-            "entity": "PS",
-            "value": "동현"
-          }
-        ]
+        "intent": "display_off",
+        "text": "화면 1시간 10분 뒤에 꺼지게 해줘"
       },
       {
-        "intent": "intro",
-        "text": "철수 입니다",
+        "intent": "display_off",
+        "text": "디스플레이 25분 후에 종료해줘"
+      },
+      {
+        "intent": "display_off",
+        "text": "화면 꺼짐 8분으로 해줘"
+      },
+      {
+        "intent": "display_off",
+        "text": "디스플레이 자동 꺼짐 40분으로 해줘"
+      },
+      {
+        "intent": "display_off",
+        "text": "19분 뒤에 화면 꺼줘"
+      },
+      {
+        "intent": "date_search",
+        "text": "금요일 몇일이야"
+      },
+      {
+        "intent": "date_search",
+        "text": "금요일은 몇 월 몇 일이야?"
+      },
+      {
+        "intent": "date_search",
+        "text": "다음주 수요일은 몇 일 이지?색"
+      },
+      {
+        "intent": "date_search",
+        "text": "석가탄신일은 언제지?"
+      },
+      {
+        "intent": "date_search",
+        "text": "설날은 몇 일이지?"
+      },
+      {
+        "intent": "date_search",
+        "text": "수요일은 몇 번째 되는 날이야?"
+      },
+      {
+        "intent": "date_search",
+        "text": "크리스마스은 몇 일이야?"
+      },
+      {
+        "intent": "date_search",
+        "text": "아빠 생일이 언제였지?"
+      },
+      {
+        "intent": "date_search",
+        "text": "오늘은 몇 일이야?"
+      },
+      {
+        "intent": "date_search",
+        "text": "월급 날 언제더라?"
+      },
+      {
+        "intent": "date_search",
+        "text": "월요일은 날짜가 어떻게 돼?"
+      },
+      {
+        "intent": "date_search",
+        "text": "이번주 토요일은 몇 날이야?"
+      },
+      {
+        "intent": "date_search",
+        "text": "내일은 몇 일 이었지?"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "슬립모드 2시간으로 해줘"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "잠자기 모드 1시간 으로 변경"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "절전 모드 1시간 반으로 해줘"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "슬립 모드 90분으로 활성화"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "잠잦기 모드 20분으로 해줘"
+      },
+      {
+        "intent": "sleep_mode",
+        "text": "절전 모드 시간 3시간으로 세팅해줘"
+      },
+      {
+        "intent": "sound_up",
+        "text": "소리 50 만큼 올려줘"
+      },
+      {
+        "intent": "sound_up",
+        "text": "볼륨 40으로 키워줘"
+      },
+      {
+        "intent": "sound_up",
+        "text": "사운드 20으로 해줘"
+      },
+      {
+        "intent": "sound_up",
+        "text": "소리 90 으로 증가"
+      },
+      {
+        "intent": "sound_up",
+        "text": "음량 90으로 올려"
+      },
+      {
+        "intent": "sound_up",
+        "text": "소리 43으로 올려줘"
+      },
+      {
+        "intent": "sound_change",
+        "text": "볼륨 40으로 설정"
+      },
+      {
+        "intent": "sound_change",
+        "text": "사운드 20으로 세팅"
+      },
+      {
+        "intent": "sound_change",
+        "text": "소리 100으로 세팅"
+      },
+      {
+        "intent": "sound_change",
+        "text": "시스템 볼륨 20으로 해줘"
+      },
+      {
+        "intent": "sound_change",
+        "text": "소리 80으로 바꿔줘"
+      },
+      {
+        "intent": "sound_change",
+        "text": "볼륨 70으로 해줘"
+      },
+      {
+        "intent": "sound_change",
+        "text": "소리 72로 해줘"
+      },
+      {
+        "intent": "sound_change",
+        "text": "사운드 20으로 세팅"
+      },
+      {
+        "intent": "sound_change",
+        "text": "사운드 20으로 설정"
+      },
+      {
+        "intent": "sound_down",
+        "text": "음량 22로 낮춰줘"
+      },
+      {
+        "intent": "sound_down",
+        "text": "소리 10으로 줄여줘"
+      },
+      {
+        "intent": "sound_down",
+        "text": "볼륨 40으로 내려"
+      },
+      {
+        "intent": "sound_down",
+        "text": "컴퓨터 소리가 크니까 20으로 내려줘"
+      },
+      {
+        "intent": "sound_down",
+        "text": "음량 30으로 줄여"
+      },
+      {
+        "intent": "sound_down",
+        "text": "사운드 20으로 내려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "광복절",
+            "entity": "day"
+          }
+        ],
+        "text": "광복절은 무슨 요일이야"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "제헌절",
+            "entity": "day"
+          }
+        ],
+        "text": "제헌절 요일 알려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "현충일",
+            "entity": "day"
+          }
+        ],
+        "text": "현충일은 무슨 요일"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "제헌절",
+            "entity": "day"
+          }
+        ],
+        "text": "제헌절 요일"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "한글날",
+            "entity": "day"
+          }
+        ],
+        "text": "한글날 요일 알려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "삼일절",
+            "entity": "day"
+          }
+        ],
+        "text": "삼일절 요일 알려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "개천절",
+            "entity": "day"
+          }
+        ],
+        "text": "개천절 요일 알려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "한글날",
+            "entity": "day"
+          }
+        ],
+        "text": "한글날 요일 알려줘"
+      },
+      {
+        "intent": "day_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "크리스마스",
+            "entity": "day"
+          }
+        ],
+        "text": "크리스마스 요일 알려줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "새 워크 스페이스 열어줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "새 워크 스페이스 추가"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "새 작업 공간 추가해줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "새 작업 공간 열어줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "스페이스 추가"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "워크스페이스 새로 띄워줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "워크스페이스 하나 더"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "워크스페이스 하나만 추가해줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "워크 스페이스 한개 더"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "작업 공간 새로 열어줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "작업 공간 추가해줘"
+      },
+      {
+        "intent": "add_workspace",
+        "text": "새 작업 공간 띄어줘"
+      },
+      {
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "PS",
-            "value": "철수"
+            "value": "1번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "1번 워크스페이스를 삭제해줘"
       },
       {
-        "intent": "intro",
-        "text": "나는 영록",
-        "entities": [
-          {
-            "start": 3,
-            "end": 5,
-            "entity": "PS",
-            "value": "영록"
-          }
-        ]
-      },
-      {
-        "intent": "intro",
-        "text": "영희 에요",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "PS",
-            "value": "영희"
+            "value": "4번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "4번 워크스페이스를 없에줘"
       },
       {
-        "intent": "intro",
-        "text": "저는 민호 입니다",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 3,
-            "end": 5,
-            "entity": "PS",
-            "value": "민호"
+            "start": 0,
+            "end": 2,
+            "value": "2번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "2번 workspace 날려줘"
       },
       {
-        "intent": "intro",
-        "text": "내 이름은 지홍 야",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 6,
-            "end": 8,
-            "entity": "PS",
-            "value": "지홍"
+            "start": 0,
+            "end": 2,
+            "value": "3번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "3번 워크스페이스 빼버려"
       },
       {
-        "intent": "intro",
-        "text": "저는 재민 에요",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 3,
-            "end": 5,
-            "entity": "PS",
-            "value": "재민"
+            "start": 0,
+            "end": 2,
+            "value": "2번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "2번 워크스페이스 없애"
       },
       {
-        "intent": "intro",
-        "text": "난 민철",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 2,
+            "start": 0,
+            "end": 2,
+            "value": "1번",
+            "entity": "workspace"
+          }
+        ],
+        "text": "1번 work space]를 제거해줘"
+      },
+      {
+        "intent": "remove_workspace",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "3번",
+            "entity": "workspace"
+          }
+        ],
+        "text": "3번 workspace] 꺼 줘"
+      },
+      {
+        "intent": "remove_workspace",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "삼번",
+            "entity": "workspace"
+          }
+        ],
+        "text": "삼번 워크스페이스 지울래"
+      },
+      {
+        "intent": "remove_workspace",
+        "entities": [
+          {
+            "start": 0,
             "end": 4,
-            "entity": "PS",
-            "value": "민철"
+            "value": "3 번째",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "3 번째 워크스페이스 제거"
       },
       {
-        "intent": "intro",
-        "text": "나 종호",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 2,
+            "start": 0,
             "end": 4,
-            "entity": "PS",
-            "value": "종호"
+            "value": "1 번째",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "1 번째 워크스페이스 삭제해줘"
       },
       {
-        "intent": "intro",
-        "text": "저는 슬기",
+        "intent": "remove_workspace",
         "entities": [
           {
-            "start": 3,
-            "end": 5,
-            "entity": "PS",
-            "value": "슬기"
+            "start": 0,
+            "end": 4,
+            "value": "2 번째",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "2 번째워크스페이스 지워"
       },
       {
-        "intent": "intro",
-        "text": "이름 재훈",
-        "entities": [
-          {
-            "start": 3,
-            "end": 5,
-            "entity": "PS",
-            "value": "재훈"
-          }
-        ]
-      },
-      {
-        "intent": "intro",
-        "text": "민수",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "PS",
-            "value": "민수"
+            "value": "4번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "4번 work space 제거"
       },
       {
-        "intent": "intro",
-        "text": "경식",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "PS",
-            "value": "경식"
+            "value": "1번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "1번 작업 공간를 삭제해줘"
       },
       {
-        "intent": "intro",
-        "text": "주형",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "PS",
-            "value": "주형"
+            "value": "4번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "4번 작업 공간를 없에줘"
       },
       {
-        "intent": "intro",
-        "text": "박서용",
-        "entities": [
-          {
-            "start": 0,
-            "end": 3,
-            "entity": "PS",
-            "value": "박서용"
-          }
-        ]
-      },
-      {
-        "intent": "intro",
-        "text": "김재석",
-        "entities": [
-          {
-            "start": 0,
-            "end": 3,
-            "entity": "PS",
-            "value": "김재석"
-          }
-        ]
-      },
-      {
-        "intent": "blood_type",
-        "text": "제 혈액형은 A형 입니다",
-        "entities": [
-          {
-            "start": 7,
-            "end": 9,
-            "entity": "type",
-            "value": "A형"
-          }
-        ]
-      },
-      {
-        "intent": "blood_type",
-        "text": "저는 O형",
-        "entities": [
-          {
-            "start": 3,
-            "end": 5,
-            "entity": "type",
-            "value": "O형"
-          }
-        ]
-      },
-      {
-        "intent": "blood_type",
-        "text": "나는 B형 이다",
-        "entities": [
-          {
-            "start": 3,
-            "end": 5,
-            "entity": "type",
-            "value": "B형"
-          }
-        ]
-      },
-      {
-        "intent": "blood_type",
-        "text": "내 혈액형 AB형",
-        "entities": [
-          {
-            "start": 6,
-            "end": 9,
-            "entity": "type",
-            "value": "AB형"
-          }
-        ]
-      },
-      {
-        "intent": "blood_type",
-        "text": "O형",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "type",
-            "value": "O형"
+            "value": "2번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "2번 작업 공간 날려줘"
       },
       {
-        "intent": "blood_type",
-        "text": "A형",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "type",
-            "value": "A형"
+            "value": "3번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "3번 작업 공간 빼버려"
       },
       {
-        "intent": "blood_type",
-        "text": "B형",
+        "intent": "remove_workspace",
         "entities": [
           {
             "start": 0,
             "end": 2,
-            "entity": "type",
-            "value": "B형"
+            "value": "2번",
+            "entity": "workspace"
           }
-        ]
+        ],
+        "text": "2번 작업 공간 없애"
       },
       {
-        "intent": "blood_type",
-        "text": "AB형",
-        "entities": [
-          {
-            "start": 0,
-            "end": 3,
-            "entity": "type",
-            "value": "AB형"
-          }
-        ]
-      },
-      {
-        "intent": "dectect_URL",
-        "text": "링크 여기 www.google.com",
+        "intent": "url_search",
         "entities": [
           {
             "start": 6,
             "end": 20,
-            "entity": "url",
-            "value": "www.google.com"
+            "value": "www.google.com",
+            "entity": "url"
           }
-        ]
+        ],
+        "text": "링크 여기 www.google.com"
       },
       {
-        "intent": "dectect_URL",
-        "text": "사이트 www.cam.ac.uk",
+        "intent": "url_search",
         "entities": [
           {
             "start": 4,
             "end": 17,
-            "entity": "url",
-            "value": "www.cam.ac.uk"
+            "value": "www.cam.ac.uk",
+            "entity": "url"
           }
-        ]
-      },
-      {
-        "intent": "Tic_Tok",
-        "text": "10분 있다 보자",
-        "entities": [
-          {
-            "start": 0,
-            "end": 3,
-            "entity": "TI",
-            "value": "10분"
-          }
-        ]
-      },
-      {
-        "intent": "Tic_Tok",
-        "text": "2시간",
-        "entities": [
-          {
-            "start": 0,
-            "end": 3,
-            "entity": "TI",
-            "value": "2시간"
-          }
-        ]
-      },
-      {
-        "intent": "Tic_Tok",
-        "text": "5분 31초",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "entity": "TI",
-            "value": "5분 31초"
-          }
-        ]
-      },
-      {
-        "intent": "goodbye",
-        "text": "나중에 또 얘기햌ㅋㅋ"
-      },
-      {
-        "intent": "goodbye",
-        "text": "잘가"
-      },
-      {
-        "intent": "goodbye",
-        "text": "끝"
-      },
-      {
-        "intent": "goodbye",
-        "text": "빠이"
-      },
-      {
-        "intent": "goodbye",
-        "text": "굿바이"
-      },
-      {
-        "intent": "goodbye",
-        "text": "바이"
-      },
-      {
-        "intent": "goodbye",
-        "text": "종료"
-      },
-      {
-        "intent": "goodbye",
-        "text": "나중에 또 얘기해"
-      },
-      {
-        "intent": "goodbye",
-        "text": "좋은 시간이었어"
-      },
-      {
-        "intent": "goodbye",
-        "text": "다음에 또 봐"
-      },
-      {
-        "intent": "goodbye",
-        "text": "갈게"
-      },
-      {
-        "intent": "goodbye",
-        "text": "갈게요"
-      },
-      {
-        "intent": "goodbye",
-        "text": "ㅂㅂ"
-      },
-      {
-        "intent": "goodbye",
-        "text": "또 봅시다"
+        ],
+        "text": "사이트 www.cam.ac.uk"
       },
       {
         "intent": "greet",
@@ -445,36 +598,12 @@
         "text": "하이"
       },
       {
-        "intent": "greet",
-        "text": "ㅎㅇ"
-      },
-      {
-        "intent": "greet",
-        "text": "처음 뵙곘습니다"
-      },
-      {
-        "intent": "greet",
-        "text": "방가"
-      },
-      {
-        "intent": "greet",
-        "text": "반가워"
-      },
-      {
-        "intent": "greet",
-        "text": "반갑습니다"
-      },
-      {
         "intent": "thanks",
         "text": "떙큐"
       },
       {
         "intent": "thanks",
         "text": "감사"
-      },
-      {
-        "intent": "thanks",
-        "text": "ㄱㅅ"
       },
       {
         "intent": "thanks",
@@ -499,77 +628,27 @@
       {
         "intent": "thanks",
         "text": "좋아"
-      },
-      {
-        "intent": "thanks",
-        "text": "굿"
-      },
-      {
-        "intent": "thanks",
-        "text": "썡유"
-      },
-      {
-        "intent": "thanks",
-        "text": "고맙"
-      },
-      {
-        "intent": "thanks",
-        "text": "고마웠어"
-      },
-      {
-        "intent": "joke",
-        "text": "재밌는 얘기 좀 해줘"
-      },
-      {
-        "intent": "joke",
-        "text": "재밌는 거 알려줘"
-      },
-      {
-        "intent": "joke",
-        "text": "웃기는 얘기"
-      },
-      {
-        "intent": "joke",
-        "text": "재밌는 놈당 있어?"
-      },
-      {
-        "intent": "joke",
-        "text": "웃긴 얘기 있어?"
-      },
-      {
-        "intent": "joke",
-        "text": "심심해"
-      },
-      {
-        "intent": "joke",
-        "text": "농담 하나 해봐"
-      },
-      {
-        "intent": "joke",
-        "text": "웃긴 얘기 해봐"
-      },
-      {
-        "intent": "joke",
-        "text": "농담"
-      },
-      {
-        "intent": "joke",
-        "text": "뭐 재밌는 거 있어?"
-      },
-      {
-        "intent": "joke",
-        "text": "나 좀 웃겨줘"
-      },
-      {
-        "intent": "joke",
-        "text": "웃긴 얘기 좀"
       }
     ],
-    "regex_features": [
+    "regex_features": [],
+    "lookup_tables": [
       {
-        "pattern": "(.*\\w+.)(?=입니다|야|에요|요|입)",
-        "name": " PS"
+        "name": " day",
+        "elements": [
+          "삼일절",
+          "현충일",
+          "제헌절",
+          "광복절",
+          "개천절",
+          "한글날",
+          "크리스마스",
+          "추석",
+          "부처님 오신날",
+          "부처 님 오 신 날",
+          "신정"
+        ]
       }
-    ]
+    ],
+    "entity_synonyms": []
   }
 }

@@ -1,18 +1,16 @@
 language: "kr"
 pipeline:
 
-#- name: "tokenizer_whitespace"
+#- name: "component.KoreanTokenizerKhaiii"
 - name: "component.KoreanTokenizer"
-#  "norm": false
-#  "stem": false
-#- name: "ner_crf"
-- name: "ner_duckling_http"
+# - name: "ner_duckling_http"
+ - name: "component.KoreanDuckling"
   url: "http://0.0.0.0:8000"
-  dimensions: ["phone-number", "url", "email", "time"]
+  dimensions: ["duration", "timezone", "ordinal", "url", "cycle", "time", "number"]
   locale: "ko_KO"
   timezone: "Asia/Seoul"
 - name: "component.KoreanExtractor"
-- name: "component.PreTrainedCRF"
+#- name: "component.PreTrainedCRF"
 - name: "ner_synonyms"
 - name: "intent_featurizer_count_vectors"
   "token_pattern": '(?u)\b\w+\b' # 1개의 character도 인식하도록 regex 변경

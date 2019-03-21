@@ -1,56 +1,72 @@
 %YAML 1.1
 ---
 actions:
-- utter_name
-- utter_thanks
+- utter_add_workspace
+- utter_remove_workspace
+- utter_day_search
+- utter_date_search
 - utter_greet
-- utter_goodbye
-- utter_joke
+- utter_thanks
+- utter_url_detect
 - utter_fallback
-- utter_blood_type
-- utter_blood_type_confirm
-- utter_detect_complete
+- action_day_search
+- action_date_search
+- action_sound_change
+- action_sound_up
+- action_sound_down
+- action_display_off
 config:
   store_entities_as_slots: true
 entities:
-- PS
-- type
+- workspace
 - url
 - time
-- TI
-- email
+- number
+- day
+- cycle
+- duration
 forms: []
 intents:
+- add_workspace:
+    use_entities: true
+- remove_workspace:
+    use_entities: true
+- day_search:
+    use_entities: true
+- date_search:
+    use_entities: true
+- url_search:
+    use_entities: true
 - greet:
-    use_entities: true
-- name:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- detect_URL:
-    use_entities: true
-- intro:
-    use_entities: true
-- blood_type:
     use_entities: true
 - thanks:
     use_entities: true
-- Tic_Tok:
+- sound_change:
     use_entities: true
-- joke:
+- sound_up:
     use_entities: true
-- deny:
+- sound_down:
+    use_entities: true
+- display_off:
+    use_entities: true
+- sleep_mode:
+    use_entities: true
+- action_display_off:
     use_entities: true
 slots:
-  PS:
+  cycle:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
-  TI:
+  day:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
-  email:
+  duration:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  number:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
@@ -58,34 +74,28 @@ slots:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
-  type:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.UnfeaturizedSlot
   url:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
+  workspace:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
 templates:
-  utter_blood_type:
-  - text: 혈액형이 뭐에요?
-  utter_blood_type_confirm:
-  - text: 당신 혈액형 {type} 맞나요?
-  utter_detect_complete:
-  - text: email & url 확인
+  utter_add_workspace:
+  - text: ' 워크스페이스 생성 '
+  utter_date_search:
+  - text: ' {date} 는 X월 Y일 입니다'
+  utter_day_search:
+  - text: '{day}  은 X요일 입니다'
   utter_fallback:
-  - text: 무슨 뜻인지 모르겠어요...ㅠㅠ
-  utter_goodbye:
-  - text: 다음에 또 얘기해요~!
+  - text: 잘 모르겠습니다
   utter_greet:
-  - text: '{PS}님 반갑습니다. 무슨일이세요?'
-  utter_joke:
-  - text: 설탕이 깜짝 놀라면!!! 이럴 슈가~~~
-  - text: 아마존에 사람이 누굴까요? 아마... John?
-  - text: 총이 움직이면!!!??? 이동건~~
-  - text: 고추가 웃으면? 풋고추...ㅎㅎㅎㅎ
-  - text: 세상에서 가장 착한 사자가 뭔지알아요? 자원봉사자!
-  utter_name:
-  - text: 안녕하세요. 이름이 뭐에요?
+  - text: 반갑습니다~ !
+  utter_remove_workspace:
+  - text: ' 워크스페이스 삭제 '
   utter_thanks:
   - text: 감사합니다^^
+  utter_url_detect:
+  - text: ' url 확인: {url} '

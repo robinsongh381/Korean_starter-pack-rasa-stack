@@ -1,36 +1,54 @@
 {
-  "python": "3.5.2",
   "action_fingerprints": {
-    "utter_detect_complete": {
-      "slots": []
-    },
     "action_listen": {
       "slots": [
-        "type",
-        "PS"
+        "day",
+        "url",
+        "number"
       ]
-    },
-    "utter_blood_type_confirm": {
-      "slots": []
-    },
-    "utter_name": {
-      "slots": []
     },
     "utter_greet": {
       "slots": []
+    },
+    "utter_thanks": {
+      "slots": []
+    },
+    "utter_remove_workspace": {
+      "slots": []
+    },
+    "action_sound_up": {
+      "slots": []
+    },
+    "action_day_search": {
+      "slots": []
+    },
+    "action_display_off": {
+      "slots": []
+    },
+    "action_sound_change": {
+      "slots": []
+    },
+    "action_date_search": {
+      "slots": []
+    },
+    "action_sound_down": {
+      "slots": []
     }
   },
-  "trained_at": "20190308-143041",
+  "python": "3.6.7",
+  "max_histories": [
+    3,
+    3,
+    null
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.keras_policy.KerasPolicy",
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.fallback.FallbackPolicy"
   ],
-  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
-  "rasa_core": "0.12.3",
-  "max_histories": [
-    3,
-    3,
-    null
-  ]
+  "trained_at": "20190321-151518",
+  "rasa_core": "0.13.4",
+  "tensorflow": "1.12.0",
+  "sklearn": "0.20.3"
 }
