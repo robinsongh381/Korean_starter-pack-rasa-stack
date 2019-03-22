@@ -1,10 +1,9 @@
 language: "kr"
 pipeline:
 
-#- name: "component.KoreanTokenizerKhaiii"
 - name: "component.KoreanTokenizer"
 # - name: "ner_duckling_http"
- - name: "component.KoreanDuckling"
+- name: "component.KoreanDuckling"
   url: "http://0.0.0.0:8000"
   dimensions: ["duration", "timezone", "ordinal", "url", "cycle", "time", "number"]
   locale: "ko_KO"

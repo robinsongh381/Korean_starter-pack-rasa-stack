@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import logging
 import os
 import time
-import  re
+import re
 
 import requests
 import simplejson
@@ -47,6 +47,7 @@ def filter_irrelevant_matches(matches, requested_dimensions):
 def convert_duckling_format_to_rasa(matches):
     extracted = []
     for match in matches:
+        """ This is for avoiding eg. 20만 (200,000) from a text 20만큼"""
         if match["dim"] == "number" and re.match("\d+", match.get("body")) != None:
             value = re.findall("\d+", match.get("body"))[0]
             entity = {"start": match["start"],
@@ -59,8 +60,51 @@ def convert_duckling_format_to_rasa(matches):
                       "additional_info": match["value"],
                       "entity": match["dim"]}
             extracted.append(entity)
+
+        # This is for avoiding eg. integer 4 from a text '사'랑해
         elif match["dim"] == "number" and re.match("\d+", match.get("body")) == None:
             pass
+
+        elif match["dim"] == "duration":
+            if match["value"]['unit'] == "second":
+                entity = {"start": match["start"],
+                          "end": match["end"],
+                          "text": match.get("body", match.get("text", None)),
+                          "value": match["value"]["value"],
+                          "confidence": 1.0,
+                          "additional_info": match["value"],
+                          "entity": match["dim"]}
+                extracted.append(entity)
+            elif match["value"]["unit"] == "minute":
+                entity = {"start": match["start"],
+                          "end": match["end"],
+                          "text": match.get("body", match.get("text", None)),
+                          "value": match["value"]["value"] * 60,
+                          "confidence": 1.0,
+                          "additional_info": match["value"],
+                          "entity": match["dim"]}
+
+                extracted.append(entity)
+            elif match["value"]["unit"] == "hour":
+                entity = {"start": match["start"],
+                          "end": match["end"],
+                          "text": match.get("body", match.get("text", None)),
+                          "value": match["value"]["value"] * 3600,
+                          "confidence": 1.0,
+                          "additional_info": match["value"],
+                          "entity": match["dim"]}
+
+                extracted.append(entity)
+            else:
+                value = extract_value(match)
+                entity = {"start": match["start"],
+                          "end": match["end"],
+                          "text": match.get("body", match.get("text", None)),
+                          "value": value,
+                          "confidence": 1.0,
+                          "additional_info": match["value"],
+                          "entity": match["dim"]}
+                extracted.append(entity)
         else:
             value = extract_value(match)
             entity = {"start": match["start"],
@@ -185,6 +229,14 @@ class KoreanDuckling(EntityExtractor):
                 message.text = message.text.replace("몇일", "며칠")
             elif "몇 일" in message.text:
                 message.text = message.text.replace("몇 일", "며칠")
+            elif "시간후" in message.text:
+                message.text = message.text.replace("시간후", "시간뒤")
+            elif "시간 후" in message.text:
+                message.text = message.text.replace("시간 후", "시간 뒤")
+            elif "분후" in message.text:
+                message.text = message.text.replace("분후", "분뒤")
+            elif "분 후" in message.text:
+                message.text = message.text.replace("분 후", "분 뒤")
             else:
                 None
 

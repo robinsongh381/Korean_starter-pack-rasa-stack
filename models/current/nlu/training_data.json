@@ -3,7 +3,11 @@
     "common_examples": [
       {
         "intent": "display_off",
-        "text": "화면 1시간 10분 뒤에 꺼지게 해줘"
+        "text": "1시간후에디스플레이꺼줘"
+      },
+      {
+        "intent": "display_off",
+        "text": "화면 1시간 10분 30초 뒤에 꺼지게 해줘"
       },
       {
         "intent": "display_off",

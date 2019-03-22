@@ -3,8 +3,8 @@
     "action_listen": {
       "slots": [
         "day",
-        "url",
-        "number"
+        "number",
+        "url"
       ]
     },
     "utter_greet": {
@@ -47,7 +47,7 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.fallback.FallbackPolicy"
   ],
-  "trained_at": "20190321-151518",
+  "trained_at": "20190322-100429",
   "rasa_core": "0.13.4",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.3"

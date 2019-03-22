@@ -3,7 +3,9 @@
     "pipeline": [
         {
             "name": "component.KoreanTokenizer",
-            "url": "http://0.0.0.0:8000",
+            "class": "component.korean_tokenizer.KoreanTokenizer"
+        },
+        {
             "dimensions": [
                 "duration",
                 "timezone",
@@ -13,9 +15,11 @@
                 "time",
                 "number"
             ],
+            "url": "http://0.0.0.0:8000",
             "locale": "ko_KO",
             "timezone": "Asia/Seoul",
-            "class": "component.korean_tokenizer.KoreanTokenizer"
+            "name": "component.KoreanDuckling",
+            "class": "component.korean_duckling.KoreanDuckling"
         },
         {
             "BILOU_flag": true,
@@ -51,7 +55,7 @@
             "L2_c": 0.1,
             "name": "component.KoreanExtractor",
             "classifier_file": "crf_model.pkl",
-            "class": "component.ner_crf.KoreanExtractor"
+            "class": "component.kroean_extractor.KoreanExtractor"
         },
         {
             "name": "ner_synonyms",
@@ -111,6 +115,6 @@
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20190321-145404",
+    "trained_at": "20190322-100417",
     "rasa_nlu_version": "0.14.4"
 }

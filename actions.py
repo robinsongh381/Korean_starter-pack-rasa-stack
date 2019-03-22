@@ -19,10 +19,26 @@ class DisplayOff(Action):
         """Return weekday using datetime"""
 
         duration = tracker.get_latest_entity_values("duration")
-        print(type(duration))
 
-        dispatcher.utter_message("{} 으로 설정합니다".format(duration))
+        time_list = list(duration)
+        time_sum = sum(time_list)
+        print(list(duration))
+        print(type(time_list))
+        print(time_sum)
 
+        mydelta = datetime.timedelta(seconds=time_sum)
+        mytime = datetime.datetime.min + mydelta
+        h, m, s = mytime.hour, mytime.minute, mytime.second
+        if h == 0 :
+            if m == 0:
+                dispatcher.utter_message("1분 보다 커야 합니다")
+            else:
+                dispatcher.utter_message("{}분 으로 설정합니다".format(m))
+        else:
+            if m == 0 :
+                    dispatcher.utter_message("{}시간으로 설정합니다".format(h))
+            else:
+                dispatcher.utter_message("{}시간 {}분으로 설정합니다".format(h,m))
         return []
 
 
@@ -55,14 +71,14 @@ class DateSearch(Action):
 
     def run(self, dispatcher, tracker, domain):
         """Return date using datetime"""
-        day_name =  next(tracker.get_latest_entity_values("day"), None)
+        # day_name =  next(tracker.get_latest_entity_values("day"), None)
         date = next(tracker.get_latest_entity_values("time"), None)
 
         year = int(date[:4])
         month = int(date[5:7])
         day = int(date[8:10])
 
-        dispatcher.utter_message("{}은 {}년 {}월 {}일 입니다".format(day_name, year, month, day))
+        dispatcher.utter_message("{}년 {}월 {}일 입니다".format(year, month, day))
 
         return []
 
